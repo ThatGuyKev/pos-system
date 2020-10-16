@@ -1,0 +1,29 @@
+{
+  "name": "pos-service",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack --progress",
+    "db:migrate": "sequelize db:migrate",
+    "db:migrate:undo": "sequelize db:migrate:undo",
+    "db:migrate:undo:all": "sequelize db:migrate:undo:all",
+    "watch": "babel-watch -L src/index.js"
+  },
+  "dependencies": {
+    "@babel/core": "^7.12.1",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.12.1",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "babel-watch": "^7.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mysql2": "^2.2.5",
+    "nodemon": "^2.0.5",
+    "sequelize": "^6.3.5",
+    "sequelize-cli": "^6.2.0",
+    "webpack": "^5.1.2",
+    "webpack-cli": "^4.0.0"
+  }
+}

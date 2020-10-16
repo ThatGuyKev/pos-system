@@ -1,0 +1,21 @@
+version: "3"
+services:
+  pos-service:
+    build: "./pos-service"
+    volumes:
+      - "./pos-service:/opt/pos-service"
+    depends_on:
+      - "pos-service-db"
+
+    environment:
+      - DB_URI=mysql://root:password@pos-service-db/db?charset=UTF8
+    ports:
+      - 5000:5000
+
+  pos-service-db:
+    image: mysql:5.7.20
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=db
+    ports:
+      - 0.0.0.0:5100:3306
